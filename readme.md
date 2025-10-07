@@ -48,8 +48,11 @@ int main() {
 }
 ```
 
-### output:
+### Output:
 ```
 hello_world_txt, 13 bytes:"hello world\n"
 n, 8 bytes:69420
 ```
+
+## PS
+Works only on MacOs with arm64.
