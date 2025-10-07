@@ -10,7 +10,7 @@ Compiles resources in object file
     * Structure is: `path type name_of_var name_of_size_var`
         * `path` is path to file realtive to cwd
         * `type` is '**s**'(c string) or '**b**'(binary), if type is '**s**' `crp` will add **0** at the end. (default is **'b'**)
-        * `name_of_var` is name of variable which will refer to file content(**uint8_t[]**). (default is file **basename**)
+        * `name_of_var` is name of variable which will refer to file content(**uint8_t[]**). (default is file **basename**, where all non alpha-numeric replaced by **'_'**)
         * `name_of_size_var` is name of variable which stores size of file(**uint64_t**). (default is file **name_of_var** + **"_len"**)
     * Same names is undefined behavior
 2. ### Run
