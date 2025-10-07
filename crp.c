@@ -1,5 +1,6 @@
 #include "dump.h"
 #include "sds.c"
+#include <ctype.h>
 #include <libgen.h>
 #include <mach-o/loader.h>
 #include <mach-o/nlist.h>
@@ -117,14 +118,8 @@ Asset *load_assets(sds config_file_path, uint32_t *out_count) {
             var_name = sdscat(sdsnew("_"), basename(tmp));
             sdsfree(tmp);
             for (int i = 0; i < sdslen(var_name); i++) {
-                switch (var_name[i]) {
-                case '.':
-                case '-':
-                case ' ':
+                if (!isalnum(var_name[i])) {
                     var_name[i] = '_';
-                    break;
-                default:
-                    break;
                 }
             }
         }
