@@ -21,6 +21,10 @@ Compiles resources in object file
       * -c path: path to config. (default: crp.conf)
       * -q: quiet. (default: no)
       * output file. (default: assets.o)
+3. ### Link
+```
+clang src/hello_world.c build/assets.o -o hello_world
+```
 
 ## Example
 `hello_world.c`
